@@ -1,0 +1,1 @@
+CryptoTracker is a Swift-based iOS application developed using SwiftUI, designed to track real-time cryptocurrency prices. The app leverages APIs to fetch the latest data, providing users with up-to-date information on their favorite cryptocurrencies. While the core functionality follows tutorials, this project includes additional UI changes to enhance the user experience. 
