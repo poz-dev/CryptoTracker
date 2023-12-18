@@ -6,18 +6,22 @@
 //
 
 import SwiftUI
+import Kingfisher
 
 struct CoinRowView: View {
+    @StateObject var viewModel: HomeViewModel
+    let coin: Coin
+    
     var body: some View {
         HStack {
             
             // MARK: Market Cap Rank
-            Text("1")
+            Text("\(coin.marketCapRank ?? 1)")
                 .font(.caption)
                 .foregroundColor(.gray)
             
             // MARK: Coin Image
-            Image(systemName: "bitcoinsign.circle.fill")
+            Image(systemName: "circle")
                 .resizable()
                 .scaledToFit()
                 .frame(width: 32, height: 32)
@@ -25,12 +29,12 @@ struct CoinRowView: View {
             
             // MARK: Coin Name Info
             VStack(alignment: .leading, spacing: 4) {
-                Text("Bitcoin")
+                Text(coin.name)
                     .font(.subheadline)
                     .fontWeight(.semibold)
                     .padding(.leading, 4)
                 
-                Text("BTC")
+                Text(coin.symbol.uppercased())
                     .font(.caption)
                     .padding(.leading, 6)
             }
@@ -41,12 +45,12 @@ struct CoinRowView: View {
             // MARK: Coin Price Info
             
             VStack(alignment: .trailing, spacing: 4) {
-                Text("$20,330.00")
+                Text("\(coin.currentPrice)")
                     .font(.subheadline)
                     .fontWeight(.semibold)
                     .padding(.leading, 4)
                 
-                Text("-5,60%")
+                Text("\(coin.priceChange24H)")
                     .font(.caption)
                     .foregroundColor(.red)
                     .padding(.leading, 6)
@@ -60,8 +64,8 @@ struct CoinRowView: View {
     }
 }
 
-struct CoinRowView_Previews: PreviewProvider {
-    static var previews: some View {
-        CoinRowView()
-    }
-}
+//struct CoinRowView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        CoinRowView()
+//    }
+//}
