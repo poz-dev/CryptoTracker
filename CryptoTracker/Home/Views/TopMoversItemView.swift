@@ -34,9 +34,9 @@ struct TopMoversItemView: View {
                 
             }
             // Coin percent change
-            Text(coin.priceChangePercentage24H.toPercentString)
+            Text(coin.priceChangePercentage24H.toPercentString())
                 .font(.title2)
-                .foregroundColor(.green)
+                .foregroundColor(coin.priceChangePercentage24H > 0 ? .green : .red)
             
             
         }
