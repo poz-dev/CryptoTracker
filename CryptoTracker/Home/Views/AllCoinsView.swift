@@ -32,7 +32,7 @@ struct AllCoinsView: View {
             ScrollView {
                 VStack {
                     ForEach(viewModel.coins) { coin in
-                        CoinRowView(viewModel: HomeViewModel(), coin: coin)
+                        CoinRowView(coin: coin)
                     }
                 }
             }

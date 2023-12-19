@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+
 struct TopMoversView: View {
     @StateObject var viewModel: HomeViewModel
     

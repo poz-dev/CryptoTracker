@@ -9,7 +9,7 @@ import SwiftUI
 import Kingfisher
 
 struct CoinRowView: View {
-    @StateObject var viewModel: HomeViewModel
+    
     let coin: Coin
     
     var body: some View {
@@ -21,7 +21,7 @@ struct CoinRowView: View {
                 .foregroundColor(.gray)
             
             // MARK: Coin Image
-            Image(systemName: "circle")
+            KFImage(URL(string: coin.image))
                 .resizable()
                 .scaledToFit()
                 .frame(width: 32, height: 32)
@@ -45,12 +45,12 @@ struct CoinRowView: View {
             // MARK: Coin Price Info
             
             VStack(alignment: .trailing, spacing: 4) {
-                Text("\(coin.currentPrice)")
+                Text(coin.currentPrice.toCurrency())
                     .font(.subheadline)
                     .fontWeight(.semibold)
                     .padding(.leading, 4)
                 
-                Text("\(coin.priceChange24H)")
+                Text(coin.priceChangePercentage24H.toPercentString)
                     .font(.caption)
                     .foregroundColor(.red)
                     .padding(.leading, 6)
@@ -66,6 +66,6 @@ struct CoinRowView: View {
 
 //struct CoinRowView_Previews: PreviewProvider {
 //    static var previews: some View {
-//        CoinRowView()
+//        CoinRowView(coin: Coin)
 //    }
 //}

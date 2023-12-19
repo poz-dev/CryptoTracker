@@ -15,7 +15,7 @@ struct TopMoversItemView: View {
         VStack(alignment: .leading) {
             
             // Image
-            Image(systemName: "circle")
+            KFImage(URL(string: coin.image))
                 .resizable()
                 .frame(width: 34, height: 34)
                 .foregroundColor(.orange)
@@ -28,13 +28,13 @@ struct TopMoversItemView: View {
                     .font(.caption)
                     .fontWeight(.bold)
                 
-                Text("$\(coin.currentPrice)")
+                Text(coin.currentPrice.toCurrency())
                     .font(.caption)
                     .foregroundColor(.gray)
                 
             }
             // Coin percent change
-            Text("\(coin.priceChangePercentage24H)")
+            Text(coin.priceChangePercentage24H.toPercentString)
                 .font(.title2)
                 .foregroundColor(.green)
             
