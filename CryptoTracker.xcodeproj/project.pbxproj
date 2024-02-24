@@ -70,7 +70,6 @@
 			isa = PBXGroup;
 			children = (
 				08B832A42B2DB6B500F2ED24 /* Home */,
-				08B832A32B2DB66F00F2ED24 /* Utils */,
 				08B832A22B2DB66E00F2ED24 /* Extensions */,
 				08B832A12B2DB66C00F2ED24 /* App */,
 				08B832A02B2DB66A00F2ED24 /* Core */,
@@ -120,13 +119,6 @@
 				08C337D82B321E0800DDC5D9 /* Double.swift */,
 			);
 			path = Extensions;
-			sourceTree = "<group>";
-		};
-		08B832A32B2DB66F00F2ED24 /* Utils */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Utils;
 			sourceTree = "<group>";
 		};
 		08B832A42B2DB6B500F2ED24 /* Home */ = {
